@@ -11,6 +11,10 @@
 
 - name: Fix broken
   shell: "apt --fix-broken install -y"
+  when: ansible_distribution == 'Debian'
+  
+- name: update debian
+  apt:
     update_cache: yes
   when: ansible_distribution == 'Debian'
 
