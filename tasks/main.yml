@@ -9,20 +9,14 @@
   tags:
     - install-epel
 
-- name: Fix broken
-  shell: "apt --fix-broken install -y"
-  when: ansible_distribution == 'Debian'
-  
-- name: update debian
-  shell: "apt update"
-  when: ansible_distribution == 'Debian'
-
 - name: Install Nginx
   package:
     name: nginx
-    state: present
+    state: latest
   tags:
     - install-nginx
+
+
 
 # - name: Restart nginx
 #  service:
