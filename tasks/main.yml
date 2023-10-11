@@ -14,8 +14,7 @@
   when: ansible_distribution == 'Debian'
   
 - name: update debian
-  apt:
-    update_cache: yes
+  shell: "apt update"
   when: ansible_distribution == 'Debian'
 
 - name: Install Nginx
