@@ -9,9 +9,9 @@
   tags:
     - install-epel
 
-# - name: Fix broken
-#  shell: "apt --fix-broken install -y"
-#  when: ansible_distribution == 'Debian'
+- name: Fix broken
+  shell: "apt --fix-broken install -y"
+  when: ansible_distribution == 'Debian'
 
 - name: Install Nginx
   package:
